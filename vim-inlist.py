@@ -67,7 +67,7 @@ f3.close()
 
 #write inlist.vim
 fd.write('if exists("b:current_syntax")\n   finish\nendif\n\n"define keywords (obtained from controls.defaults, star_job.defaults and pgstar.defaults)\
-"some of the keywords will only highlight if they are followed by the corresponding boolean or number\nsyntax case ignore\n')
+\n"some of the keywords will only highlight if they are followed by the corresponding boolean or number\nsyntax case ignore\n')
 
 #write obtained keywords in file
 for key in keys:
@@ -94,11 +94,11 @@ fd.write('\n"Numbers of various sorts\n"" Integers\nsyn match inlistNumber displ
 fd.write('" floating point number, without a decimal point\nsyn match inlistNumber display "\<\d\+[deq][-+]\=\d\+\(_\\a\w*\)\=\>"')
 fd.write('\n" " floating point number, starting with a decimal point\nsyn match inlistNumber display "\.\d\+\([deq][-+]\=\d\+\)\=\(_\\a\w*\)\=\>"\n')
 fd.write('" " floating point number, no digits after decimal\nsyn match inlistNumber display "\<\d\+\.\([deq][-+]\=\d\+\)\=\(_\\a\w*\)\=\>"\n')
-fd.write('" " floating point number, D or Q exponents\nsyn match inlistNumber display "\<\d\+\.\d\+\([dq][-+]\=\d\+\)\=\(_\a\w*\)\=\>"\n')
+fd.write('" " floating point number, D or Q exponents\nsyn match inlistNumber display "\<\d\+\.\d\+\([dq][-+]\=\d\+\)\=\(_\\a\w*\)\=\>"\n')
 fd.write('" " floating point number\nsyn match inlistNumber  display "\<\d\+\.\d\+\(e[-+]\=\d\+\)\=\(_\\a\w*\)\=\>"\n')
 fd.write('highlight link inlistNumber Number\n\n')
 fd.write('"define booleans with the dots\nsyntax match inlistBoolean ".true."\n')
-fd.write('syntax match inlistBoolean ".false."\nhighlight link inlistBoolean Boolean\n')
+fd.write('syntax match inlistBoolean ".false."\nhighlight link inlistBoolean Boolean\n\n')
 fd.write('"define strings\n')
 fd.write(r'''syntax region inlistString start=/\v'/ skip=/\v\\./ end=/\v'/''')
 fd.write('\nhighlight link inlistString String\n\n')
