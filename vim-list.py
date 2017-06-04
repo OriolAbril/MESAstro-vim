@@ -1,7 +1,8 @@
-import re
+import re,os
 
 keypat=re.compile(r'\s*!?([^!\s#-]+)',re.IGNORECASE)
 elempat=re.compile(r'\s*([0-9]{1,3})([a-z]{1,2})',re.IGNORECASE)
+folder=os.environ['MESA_DIR']
 keys=set()
 els=set()
 fd=open('list.vim','w')
@@ -27,7 +28,7 @@ for line in f1:
 f1.close()
 
 ## get keywords for histroy files
-f1=open('/home/oriol/mesa-r9575/star/defaults/history_columns.list','r')
+f1=open(folder+'/star/defaults/history_columns.list','r')
 
 for line in f1:
     m=keypat.match(line)
@@ -39,7 +40,7 @@ for line in f1:
 f1.close()
 
 ## get keywords for profile files
-f1=open('/home/oriol/mesa-r9575/star/defaults/profile_columns.list','r')
+f1=open(folder+'/star/defaults/profile_columns.list','r')
 for line in f1:
     m=keypat.match(line)
     if m:
