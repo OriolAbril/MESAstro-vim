@@ -2,7 +2,8 @@ if exists("b:current_syntax")
    finish
 endif
 
-"define keywords (obtained from controls.defaults, star_job.defaults and pgstar.defaults)"some of the keywords will only highlight if they are followed by the corresponding boolean or number
+"define keywords (obtained from controls.defaults, star_job.defaults and pgstar.defaults)
+"some of the keywords will only highlight if they are followed by the corresponding boolean or number
 syntax case ignore
 syntax keyword inlistKeyword Color_magnitude3_xaxis2_name
 syntax keyword inlistKeyword echo_at_start
@@ -5377,7 +5378,7 @@ syn match inlistNumber display "\.\d\+\([deq][-+]\=\d\+\)\=\(_\a\w*\)\=\>"
 " " floating point number, no digits after decimal
 syn match inlistNumber display "\<\d\+\.\([deq][-+]\=\d\+\)\=\(_\a\w*\)\=\>"
 " " floating point number, D or Q exponents
-syn match inlistNumber display "\<\d\+\.\d\+\([dq][-+]\=\d\+\)\=\(_\w*\)\=\>"
+syn match inlistNumber display "\<\d\+\.\d\+\([dq][-+]\=\d\+\)\=\(_\a\w*\)\=\>"
 " " floating point number
 syn match inlistNumber  display "\<\d\+\.\d\+\(e[-+]\=\d\+\)\=\(_\a\w*\)\=\>"
 highlight link inlistNumber Number
@@ -5386,6 +5387,7 @@ highlight link inlistNumber Number
 syntax match inlistBoolean ".true."
 syntax match inlistBoolean ".false."
 highlight link inlistBoolean Boolean
+
 "define strings
 syntax region inlistString start=/\v'/ skip=/\v\\./ end=/\v'/
 highlight link inlistString String
