@@ -1,4 +1,4 @@
-# MESAstro-vim 
+![Logo](MESA-vim.png)
 
 Set of files to to enable syntax highlight for MESA inlist and \*.list files. It highlights all the possible keywords (only if followed by an apropiate expression if it is either a boolean or a number) as well as comments. The syntax highlight of inlist files is applied to any file whose name starts with inlist except `inlist.vim`.
 
